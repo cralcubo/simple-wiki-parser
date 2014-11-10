@@ -11,11 +11,11 @@ public class TableParserTest {
 		TableParser parser = new TableParser();
 
 		String oldWikiText = "||xxx||xxx||\n||yyy||yyy||";
-		String expectedText = "||xxx|xxx|\n|yyy|yyy||";
+		String expectedText = "||xxx|xxx\nyyy|yyy||";
 		assertEquals(expectedText, parser.parseToTiki(oldWikiText));
 
 		String oldWikiText2 = "||=xxx=||=xxx=||\n||yyy||yyy||";
-		String expectedText2 = "||=xxx=|=xxx=|\n|yyy|yyy||";
+		String expectedText2 = "||=xxx=|=xxx=\nyyy|yyy||";
 		assertEquals(expectedText2, parser.parseToTiki(oldWikiText2));
 
 

@@ -18,6 +18,7 @@ import com.redwood.wiki.parser.LinkParser;
 import com.redwood.wiki.parser.NumberingBulletParser;
 import com.redwood.wiki.parser.Parseable;
 import com.redwood.wiki.parser.Parser;
+import com.redwood.wiki.parser.SimpleCodeParser;
 import com.redwood.wiki.parser.StrikeParser;
 import com.redwood.wiki.parser.SubScriptParser;
 import com.redwood.wiki.parser.SuperScriptParser;
@@ -62,6 +63,7 @@ public class ParseManager {
 		//Set all the parsers to be used:
     	parseables.add(new HeaderParser());
     	parseables.add(new TableParser());
+    	parseables.add(new SimpleCodeParser());
     	parseables.add(new LinkParser());
     	parseables.add(new UnderscoreTextParser());
     	parseables.add(new BoldTextParser());

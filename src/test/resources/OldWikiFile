@@ -12,7 +12,6 @@
 ||  Canceled  ||  Skip  ||
 ||  Killed  ||  Skip  ||
 
-
 '''Related Features''': [[../../Events|ParameterizedEvents]], [[../../JCE/ShowEventsInDiagram|JCE/ShowEventsInDiagram]], [[SpecifyEventsForCalls|JobChainEngine/SpecifyEventsForCalls]]
 
 {{{
@@ -122,3 +121,8 @@ The install the following tools:
   ` brew install gnu-sed --default-names `       [[BR]]      ` brew install gawk --default-names `
 
   The --default-names switch is used to get rid of the 'g' prefix so that the installed commands can be invoked by just typing 'sed' and 'awk'.
+
+Table with code:
+
+|| `code 1` || `code 2` || `code 3` ||
+|| normal 1 || normal 2 || normal 3 ||

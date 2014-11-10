@@ -30,7 +30,7 @@ public class FileManagerTest {
 		List<WikiText> wikiTextList = fileManager.getWikiTextList();
 
 		assertNotNull(wikiTextList);
-		assertEquals(14, wikiTextList.size());
+		assertEquals(7, wikiTextList.size());
 
 		int codeCounter = 0;
 		int plainTextCounter = 0;
@@ -44,8 +44,8 @@ public class FileManagerTest {
 			}
 		}
 
-		assertEquals(7,codeCounter);
-		assertEquals(7, plainTextCounter);
+		assertEquals(3,codeCounter);
+		assertEquals(4, plainTextCounter);
 	}
 
 	@Test

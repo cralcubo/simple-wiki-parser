@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.redwood.wiki.utilities.ParseUtility;
 import com.redwood.wiki.utilities.StringUtility;
 
 public class FileManager {
@@ -35,11 +34,12 @@ public class FileManager {
 
         String text = "";
         //Reg exp that find either {{{ or `
-        Pattern pattern = Pattern.compile(".*(\\{{3}|`).*");
+//        Pattern pattern = Pattern.compile(".*(\\{{3}|`).*");
+        Pattern pattern = Pattern.compile(".*(\\{{3}).*");
         Matcher matcher;
 
         for(int i = 0; i < lines.size() ; i++){
-            String line = lines.get(i);
+            String line = lines.get(i).replaceAll("\\r", "");
             matcher = pattern.matcher(line);
             if(matcher.find()){
                 //Code found, create a new plainText object with the info collected.
@@ -69,10 +69,10 @@ public class FileManager {
         String regExpClose = "\\}{3}";
         String regExpOneLine = "\\{{3}.+\\}{3}";
 
-        if(ParseUtility.tildeFinder(lines.get(index))){
-        	regExpClose = "`";
-        	regExpOneLine = "`.+`";
-        }
+//        if(ParseUtility.tildeFinder(lines.get(index))){
+//        	regExpClose = "`";
+//        	regExpOneLine = "`.+`";
+//        }
 
         text = lines.get(index) + "\n";
 
