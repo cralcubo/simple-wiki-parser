@@ -27,7 +27,7 @@ public class TableParser implements Parseable {
             	if(i == 0){
             		line = "|" + line;
             	}else if(i == tableLines.length - 1){
-            		line = line + "|";
+            		line = line + "||";
             	}
         	}
 
