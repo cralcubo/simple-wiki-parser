@@ -1,0 +1,124 @@
+!!! Example 1
+* Chain 1
+** Step 1.1
+*** Job 1.1.1
+*** Job 1.1.2 - depends on Job 1.1.1
+
+||=  Job 1.1.1 status  =|=  Does Job 1.1.2 run, or is it skipped?  =|
+|  Completed  |  Run  |
+|  Error  |  Skip  |
+|  Skipped  |  Skip  |
+|  Ignored  |  Skip  |
+|  Canceled  |  Skip  |
+|  Killed  |  Skip  ||
+
+
+__Related Features__: [ParameterizedEvents|Events], [JCE/ShowEventsInDiagram|ShowEventsInDiagram], [JobChainEngine/SpecifyEventsForCalls|SpecifyEventsForCalls]
+
+{CODE()}
+sudo su
+/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string CRAM-MD5" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
+/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string NTLM" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
+/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string GSSAPI" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
+{CODE}
+
+__ This is an example of Bold text __
+=== This is an example of underscore text ===
+-- This is an example of strike text --
+
+{SUP()}
+sudo su
+/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string CRAM-MD5" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
+/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string NTLM" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
+{SUP}
+
+{SUB()} this is my subscript
+and continues here!{SUB}
+
+This is a link:
+[JobChainEngine/SpecifyEventsForCalls|SpecifyEventsForCalls]
+
+This is an image:
+{img type="attId" attId="8"}, {img type="attId" attId="8"}
+
+This is a colored text:
+~~#FF0000: a red text~~+~~#FFFFFF: another color text~~
+
+!!! Lookups
+
+To enable LDAP lookups:
+
+* System Preferences
+** Users & Groups
+*** Login Options (Left pane, the house symbol)
+**** Click the lock (bottom left) and feed it your password
+*** Network Account Server (Right pane, bottom), press 'join'
+* Fill in 'ldap.dev.redwood.nl' for the server name and continue.
+
+Numbering bullets example:
+
+# This is bullet level1
+### This is bullet level 1
+# This is bullet level 2
+# This is bullet level 1
+
+{CODE()}
+PEP     http://www.python.org/peps/pep-$1.html    # Python Enhancement Proposal
+PythonBug    http://bugs.python.org/issue$1       # Python Issue #$1
+Python-issue http://bugs.python.org/issue$1       # Python Issue #$1
+
+Trac-ML  http://thread.gmane.org/gmane.comp.version-control.subversion.trac.general/ # Message $1 in Trac Mailing List
+trac-dev http://thread.gmane.org/gmane.comp.version-control.subversion.trac.devel/   # Message $1 in Trac Development Mailing List
+
+Mercurial http://www.selenic.com/mercurial/wiki/index.cgi/ # the wiki for the Mercurial distributed SCM
+
+RFC       http://tools.ietf.org/html/rfc$1          # IETF's RFC $1
+ISO       http://en.wikipedia.org/wiki/ISO_         # ISO Standard $1 in Wikipedia
+kb        http://support.microsoft.com/kb/$1/en-us/ # Article $1 in Microsoft's Knowledge Base
+
+chromium-issue  http://code.google.com/p/chromium/issues/detail?id=
+
+Django      http://code.djangoproject.com/intertrac/ # Django's Trac
+
+CreoleWiki   http://wikicreole.org/wiki/
+Creole1Wiki  http://wikicreole.org/wiki/
+Creole2Wiki  http://wiki.wikicreole.org/
+
+MediaWiki    http://www.mediawiki.org/wiki/
+
+#
+# A arbitrary pick of InterWiki prefixes...
+#
+Acronym          http://www.acronymfinder.com/af-query.asp?String=exact&Acronym=
+C2find           http://c2.com/cgi/wiki?FindPage&value=
+Cache            http://www.google.com/search?q=cache:
+CPAN             http://search.cpan.org/perldoc?
+DebianBug        http://bugs.debian.org/
+DebianPackage    http://packages.debian.org/
+DebianPTS        http://packages.qa.debian.org/
+Dictionary       http://www.dict.org/bin/Dict?Database=*&Form=Dict1&Strategy=*&Query=
+Google           http://www.google.com/search?q=
+lmgtfy           http://lmgtfy.com/?q= # Well, just search for "$1", follow the link to see how to do it...
+GoogleGroups     http://groups.google.com/group/$1/msg/$2        # Message $2 in $1 Google Group
+JargonFile       http://downlode.org/perl/jargon-redirect.cgi?term=
+MeatBall         http://www.usemod.com/cgi-bin/mb.pl?
+MetaWiki         http://sunir.org/apps/meta.pl?
+MetaWikiPedia    http://meta.wikipedia.org/wiki/
+MoinMoin         http://moinmo.in/
+TracHacks        http://trac-hacks.org/wiki/
+OSM              http://www.openstreetmap.org/wiki/
+WhoIs            http://www.whois.sc/
+Why              http://clublet.com/c/c/why?
+c2Wiki           http://c2.com/cgi/wiki?
+WikiPedia        http://en.wikipedia.org/wiki/
+{CODE}
+
+Once installed update:
+
+  {CODE()} brew update {CODE}
+
+The install the following tools:
+
+  {CODE()} brew install gnu-sed --default-names {CODE}       [[BR]]      {CODE()} brew install gawk --default-names {CODE}
+
+  The --default-names switch is used to get rid of the 'g' prefix so that the installed commands can be invoked by just typing 'sed' and 'awk'.
