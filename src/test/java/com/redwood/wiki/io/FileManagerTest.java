@@ -37,7 +37,6 @@ public class FileManagerTest {
 		for(WikiText text : wikiTextList){
 
 			if(text instanceof CodeText){
-				System.out.println(">>>"+text.getText()+"<<<");
 				codeCounter++;
 			}else if(text instanceof PlainText){
 				plainTextCounter++;

@@ -4,13 +4,13 @@
 *** Job 1.1.1
 *** Job 1.1.2 - depends on Job 1.1.1
 
-||=  Job 1.1.1 status  =|=  Does Job 1.1.2 run, or is it skipped?  =|
-|  Completed  |  Run  |
-|  Error  |  Skip  |
-|  Skipped  |  Skip  |
-|  Ignored  |  Skip  |
-|  Canceled  |  Skip  |
-|  Killed  |  Skip  ||
+||=  Job 1.1.1 status  =|=  Does Job 1.1.2 run, or is it skipped?  =
+  Completed  |  Run  
+  Error  |  Skip  
+  Skipped  |  Skip  
+  Ignored  |  Skip  
+  Canceled  |  Skip  
+  Killed  |  Skip  ||
 
 __Related Features__: [ParameterizedEvents|Events], [JCE/ShowEventsInDiagram|ShowEventsInDiagram], [JobChainEngine/SpecifyEventsForCalls|SpecifyEventsForCalls]
 
@@ -124,5 +124,5 @@ The install the following tools:
 
 Table with code:
 
-|| {CODE()}code 1{CODE} | {CODE()}code 2{CODE} | {CODE()}code 3{CODE} |
-| normal 1 | normal 2 | normal 3 ||
+|| {CODE()}code 1{CODE} | {CODE()}code 2{CODE} | {CODE()}code 3{CODE} 
+ normal 1 | normal 2 | normal 3 ||
