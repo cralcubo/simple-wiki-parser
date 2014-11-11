@@ -49,7 +49,6 @@ public class ParseManager {
 				parsedText += codeText + "\n";
 				break;
 			case HTML:
-				//Do Something for html
 				String htmlText = new HtmlParser().parseToTiki(wikiText.getText());
 				parsedText += htmlText + "\n";
 				break;
