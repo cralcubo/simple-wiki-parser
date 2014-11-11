@@ -15,6 +15,13 @@ will be interpreted as a list of !InterWiki specifications:
 {{{
 prefix <space> URL [<space> # comment]
 }}}
+{{{
+#!html
+<span style="color:#999900"><br/>
+The items captions like f.e. "Process Monitor Definitions" wraps, word wrapping is allowed to a maximum of two lines, no additional ellipses is shown. <br/>
+Upon resizing and reducing the width, the minimal width should still allow the icon column to be fully seen. <br/>
+</span>
+}}}
 
 By using `$1`, `$2`, etc. within the URL, it is possible to create
 InterWiki links which support multiple arguments, e.g. Trac:ticket:40.

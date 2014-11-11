@@ -30,21 +30,27 @@ public class FileManagerTest {
 		List<WikiText> wikiTextList = fileManager.getWikiTextList();
 
 		assertNotNull(wikiTextList);
-		assertEquals(7, wikiTextList.size());
+		assertEquals(8, wikiTextList.size());
 
 		int codeCounter = 0;
 		int plainTextCounter = 0;
+		int htmlCounter = 0;
 		for(WikiText text : wikiTextList){
-
-			if(text instanceof CodeText){
+			switch(text.getType()){
+			case CODE:
 				codeCounter++;
-			}else if(text instanceof PlainText){
+				break;
+			case HTML:
+				htmlCounter++;
+				break;
+			default:
 				plainTextCounter++;
 			}
 		}
 
 		assertEquals(3,codeCounter);
 		assertEquals(4, plainTextCounter);
+		assertEquals(1, htmlCounter);
 	}
 
 	@Test

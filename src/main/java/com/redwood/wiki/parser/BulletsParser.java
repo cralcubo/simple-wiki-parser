@@ -3,7 +3,7 @@ package com.redwood.wiki.parser;
 
 
 public class BulletsParser extends AbstractBulletParser {
-	private static final String BULLETS_REG_EXPR = "([\\s]*\\*.+\n*){1,}";
+	private static final String BULLETS_REG_EXPR = "(^[\\s]*\\*.+\n*){1,}";
 
 	private static final String TIKI_BULLET = "*";
 	private static final String OLD_WIKI_BULLET = "*";

@@ -18,8 +18,8 @@ public class HeaderParserTest {
 		String expectedText2 = "!!! Test";
 		assertEquals(expectedText2, parser.parseToTiki(oldWikiText2));
 
-		String oldWikiText3 = "======= Test =======";
-		String expectedText3 = "!!!!!!! Test ";
+		String oldWikiText3 = "\n======= Test =======\n ";
+		String expectedText3 = "\n!!!!!!! Test \n ";
 		assertEquals(expectedText3, parser.parseToTiki(oldWikiText3));
 
 		String oldWikiText4 = "======= Test ======";

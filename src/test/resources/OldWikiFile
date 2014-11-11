@@ -1,16 +1,17 @@
-=== Example 1
+=== Example 1===
+
 * Chain 1
  * Step 1.1
   * Job 1.1.1
   * Job 1.1.2 - depends on Job 1.1.1
 
-||=  Job 1.1.1 status  =||=  Does Job 1.1.2 run, or is it skipped?  =||
-||  Completed  ||  Run  ||
-||  Error  ||  Skip  ||
-||  Skipped  ||  Skip  ||
-||  Ignored  ||  Skip  ||
-||  Canceled  ||  Skip  ||
-||  Killed  ||  Skip  ||
+||=  Job 1.1.1 status  =||=  Does Job 1.1.2 run, or is it skipped?=||
+||  Completed  ||  Run||
+||  Error  ||  Skip||
+||  Skipped  ||  Skip||
+||  Ignored  ||  Skip||
+||  Canceled  ||  Skip||
+||  Killed  ||  Skip||
 
 '''Related Features''': [[../../Events|ParameterizedEvents]], [[../../JCE/ShowEventsInDiagram|JCE/ShowEventsInDiagram]], [[SpecifyEventsForCalls|JobChainEngine/SpecifyEventsForCalls]]
 
@@ -25,14 +26,7 @@ sudo su
 __ This is an example of underscore text __
 ~~ This is an example of strike text ~~
 
-^
-sudo su
-/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string CRAM-MD5" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
-/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string NTLM" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
-^
-
-,, this is my subscript
-and continues here!,,
+^This is my superscript^ folloed by a ,,subscript,,.
 
 This is a link:
 [[SpecifyEventsForCalls|JobChainEngine/SpecifyEventsForCalls]]
@@ -124,5 +118,16 @@ The install the following tools:
 
 Table with code:
 
-|| `code 1` || `code 2` || `code 3` ||
-|| normal 1 || normal 2 || normal 3 ||
+|| `code 1` || `code 2` || `code 3`||
+|| normal 1 || normal 2 || normal 3||
+
+HTML:
+{{{
+#!html
+<span style="color:#999900"><br/>
+The items captions like f.e. ,,"Process Monitor Definitions",, wraps, word wrapping is allowed to a maximum of two lines, no additional ellipses is shown. <br/>
+Upon resizing and reducing the width, the minimal width should still allow the icon column to be fully seen. <br/>
+</span>
+}}}
+
+No more text ahead!

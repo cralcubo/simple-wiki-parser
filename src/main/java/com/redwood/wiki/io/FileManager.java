@@ -36,15 +36,17 @@ public class FileManager {
         //Reg exp that find either {{{ or `
 //        Pattern pattern = Pattern.compile(".*(\\{{3}|`).*");
         Pattern pattern = Pattern.compile(".*(\\{{3}).*");
-        Matcher matcher;
+        Matcher codeMatcher;
 
         for(int i = 0; i < lines.size() ; i++){
+        	//Remove all the extra characters introduced by windows when there is a new line
             String line = lines.get(i).replaceAll("\\r", "");
-            matcher = pattern.matcher(line);
-            if(matcher.find()){
+
+            codeMatcher = pattern.matcher(line);
+            if(codeMatcher.find()){
                 //Code found, create a new plainText object with the info collected.
                 if(!text.isEmpty()){
-                	wikiTextList.add(new PlainText(StringUtility.removeLastCharacter(text)));
+                	wikiTextList.add(new WikiText(StringUtility.removeLastCharacter(text), WikiTextType.PLAIN_TEXT));
                     text = "";
                 }
                 //Generate a new codeText object with all the code info related
@@ -55,7 +57,7 @@ public class FileManager {
         }
 
         if(!text.isEmpty()){
-            wikiTextList.add(new PlainText(StringUtility.removeLastCharacter(text)));
+        	wikiTextList.add(new WikiText(StringUtility.removeLastCharacter(text), WikiTextType.PLAIN_TEXT));
         }
 
 
@@ -95,7 +97,17 @@ public class FileManager {
 	        }
         }
 
-        wikiTexts.add(new CodeText(StringUtility.removeLastCharacter(text)));
+        text = StringUtility.removeLastCharacter(text);
+        WikiTextType type = WikiTextType.CODE;
+
+        //Check if the code contains HTML text
+        String htmlIdentifier = "#!html";
+        if(text.contains(htmlIdentifier)){
+        	type = WikiTextType.HTML;
+        }
+
+        wikiTexts.add(new WikiText(text, type));
+
     	return index;
     }
 

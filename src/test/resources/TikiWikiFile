@@ -1,16 +1,17 @@
 !!! Example 1
+
 * Chain 1
 ** Step 1.1
 *** Job 1.1.1
 *** Job 1.1.2 - depends on Job 1.1.1
 
-||=  Job 1.1.1 status  =|=  Does Job 1.1.2 run, or is it skipped?  =
-  Completed  |  Run  
-  Error  |  Skip  
-  Skipped  |  Skip  
-  Ignored  |  Skip  
-  Canceled  |  Skip  
-  Killed  |  Skip  ||
+||=  Job 1.1.1 status  =|=  Does Job 1.1.2 run, or is it skipped?=
+  Completed  |  Run
+  Error  |  Skip
+  Skipped  |  Skip
+  Ignored  |  Skip
+  Canceled  |  Skip
+  Killed  |  Skip||
 
 __Related Features__: [ParameterizedEvents|Events], [JCE/ShowEventsInDiagram|ShowEventsInDiagram], [JobChainEngine/SpecifyEventsForCalls|SpecifyEventsForCalls]
 
@@ -25,14 +26,7 @@ __ This is an example of Bold text __
 === This is an example of underscore text ===
 -- This is an example of strike text --
 
-{SUP()}
-sudo su
-/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string CRAM-MD5" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
-/usr/libexec/PlistBuddy -c "add ':module options:ldap:Denied SASL Methods:' string NTLM" /Library/Preferences/OpenDirectory/Configurations/LDAPv3/ldap.dev.redwood.nl.plist
-{SUP}
-
-{SUB()} this is my subscript
-and continues here!{SUB}
+{SUP()}This is my superscript{SUP} folloed by a {SUB()}subscript{SUB}.
 
 This is a link:
 [JobChainEngine/SpecifyEventsForCalls|SpecifyEventsForCalls]
@@ -124,5 +118,15 @@ The install the following tools:
 
 Table with code:
 
-|| {CODE()}code 1{CODE} | {CODE()}code 2{CODE} | {CODE()}code 3{CODE} 
- normal 1 | normal 2 | normal 3 ||
+|| {CODE()}code 1{CODE} | {CODE()}code 2{CODE} | {CODE()}code 3{CODE}
+ normal 1 | normal 2 | normal 3||
+
+HTML:
+{HTML()}
+<span style="color:#999900"><br/>
+The items captions like f.e. ,,"Process Monitor Definitions",, wraps, word wrapping is allowed to a maximum of two lines, no additional ellipses is shown. <br/>
+Upon resizing and reducing the width, the minimal width should still allow the icon column to be fully seen. <br/>
+</span>
+{HTML}
+
+No more text ahead!

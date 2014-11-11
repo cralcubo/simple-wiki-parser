@@ -4,7 +4,7 @@ import com.redwood.wiki.utilities.ParseUtility;
 
 public class SubScriptParser implements Parseable {
 
-	private static final String SUB_SCRIPT_REG_EX = ",{2}(.|\n)+?,{2}";
+	private static final String SUB_SCRIPT_REG_EX = ",{2}.+?,{2}";
 
 	/**
 	 * replace		,,subscript,,

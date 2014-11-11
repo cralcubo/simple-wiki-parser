@@ -4,15 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.redwood.wiki.io.CodeText;
 import com.redwood.wiki.io.FileManager;
-import com.redwood.wiki.io.PlainText;
 import com.redwood.wiki.io.WikiText;
 import com.redwood.wiki.parser.BoldTextParser;
 import com.redwood.wiki.parser.BulletsParser;
 import com.redwood.wiki.parser.CodeParser;
 import com.redwood.wiki.parser.ColoredTextParser;
 import com.redwood.wiki.parser.HeaderParser;
+import com.redwood.wiki.parser.HtmlParser;
 import com.redwood.wiki.parser.ImageParser;
 import com.redwood.wiki.parser.LinkParser;
 import com.redwood.wiki.parser.NumberingBulletParser;
@@ -25,6 +24,7 @@ import com.redwood.wiki.parser.SuperScriptParser;
 import com.redwood.wiki.parser.TableParser;
 import com.redwood.wiki.parser.UnderscoreTextParser;
 import com.redwood.wiki.utilities.StringUtility;
+
 
 public class ParseManager {
 
@@ -42,15 +42,23 @@ public class ParseManager {
 		Parser parser = new Parser();
 
 		for(WikiText wikiText : fileManager.getWikiTextList()){
-			if(wikiText instanceof PlainText){
+
+			switch (wikiText.getType()) {
+			case CODE:
+				String codeText = new CodeParser().parseToTiki(wikiText.getText());
+				parsedText += codeText + "\n";
+				break;
+			case HTML:
+				//Do Something for html
+				String htmlText = new HtmlParser().parseToTiki(wikiText.getText());
+				parsedText += htmlText + "\n";
+				break;
+			default:
 				String text = wikiText.getText();
 				 for(Parseable parseable : parsersList){
 					 text = parser.parseText(text, parseable);
 				 }
 				 parsedText += text + "\n";
-			}else if(wikiText instanceof CodeText){
-				String codeText = new CodeParser().parseToTiki(wikiText.getText());
-				parsedText += codeText + "\n";
 			}
 		}
 

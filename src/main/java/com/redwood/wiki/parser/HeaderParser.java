@@ -7,7 +7,7 @@ import com.redwood.wiki.utilities.ParseUtility;
 
 public class HeaderParser implements Parseable {
 	private static final String REG_EXPR_EQUALS = "={1,}";
-	private static final String REG_EXPR_HEADER = "(?<!\\|\\|)={1,}( .*)";
+	private static final String REG_EXPR_HEADER = "^(\\s*={1,}).*";
 
 	private static final String REPLACEMENT_SYMBOL = "!";
 

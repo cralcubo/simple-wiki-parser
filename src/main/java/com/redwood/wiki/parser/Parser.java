@@ -16,7 +16,6 @@ public class Parser {
 	        	String textFound = matcher.group();
 	        	//Cleaning the text found from new lines:
 	        	textFound = textFound.replaceAll("(?s)(^\n+|\n$)", "");
-//	        	System.out.println(">>" + textFound + "<<");
 	        	parsedText = parsedText.replace(textFound, parseable.parseToTiki(textFound));
 	        }
 
