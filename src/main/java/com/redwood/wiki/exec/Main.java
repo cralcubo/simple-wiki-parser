@@ -32,16 +32,22 @@ public class Main {
 		FileManager fileManager = new FileManager(Paths.get(filePath));
 
 		ParseManager parseManager = new ParseManager(fileManager);
+		String parsedFileText ="";
 
 		try {
-			String parsedFileText = parseManager.parse();
-			fileManager.write(parsedFileText);
+			parsedFileText = parseManager.parse();
+		} catch (IOException e) {
+			System.err.println(String.format("The file: %s does not exists", filePath));
+			e.printStackTrace();
+			System.exit(1);
+		}
 
+		try {
+			fileManager.write(parsedFileText);
 			System.out.println("Done!");
 			System.out.println(String.format("The parsed file is in: %s", fileManager.getOutputPath()));
 		} catch (IOException e) {
-
-			System.err.println(String.format("The file: %s does not exists", filePath));
+			System.err.println(String.format("The file to be parsed could not be generated."));
 			e.printStackTrace();
 		}
 	}

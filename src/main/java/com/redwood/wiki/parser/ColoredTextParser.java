@@ -12,7 +12,7 @@ public class ColoredTextParser implements Parseable{
 	 * with			~~#FF0000: a red text~~
 	 */
 	public String parseToTiki(String toParse) {
-		Matcher matcherCode  = Pattern.compile("[#][0-9|aA-fF]{6}").matcher(toParse);
+		Matcher matcherCode  = Pattern.compile("[#][0-9|aA-fF]{1,6}").matcher(toParse);
 
 		String colorCode = "";
 		if(matcherCode.find()){
