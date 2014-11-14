@@ -1,8 +1,6 @@
 package com.redwood.wiki.io;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -10,6 +8,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.redwood.wiki.utilities.FileUtility;
 import com.redwood.wiki.utilities.StringUtility;
 
 public class FileManager {
@@ -30,7 +29,7 @@ public class FileManager {
 
     public List<WikiText> getWikiTextList() throws IOException{
         List<WikiText> wikiTextList = new ArrayList<>();
-        List<String> lines = Files.readAllLines(inputPath, StandardCharsets.UTF_8);
+        List<String> lines = FileUtility.readAllLines(inputPath);
 
         String text = "";
         //Reg exp that find either {{{ or `
@@ -113,7 +112,7 @@ public class FileManager {
 
 
 	public void write(String parsedText) throws IOException {
-		Files.write(outputPath, parsedText.getBytes());
+		FileUtility.write(parsedText, outputPath);
 	}
 
 	public String getOutputPath(){
