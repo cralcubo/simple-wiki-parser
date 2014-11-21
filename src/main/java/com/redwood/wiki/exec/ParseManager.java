@@ -7,6 +7,7 @@ import java.util.List;
 import com.redwood.wiki.io.FileManager;
 import com.redwood.wiki.io.WikiText;
 import com.redwood.wiki.parser.BoldTextParser;
+import com.redwood.wiki.parser.BreakLineParser;
 import com.redwood.wiki.parser.BulletsParser;
 import com.redwood.wiki.parser.CodeParser;
 import com.redwood.wiki.parser.ColoredTextParser;
@@ -81,6 +82,7 @@ public class ParseManager {
     	parseables.add(new ImageParser());
     	parseables.add(new BulletsParser());
     	parseables.add(new NumberingBulletParser());
+    	parseables.add(new BreakLineParser());
 
     	return parseables;
 	}

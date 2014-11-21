@@ -112,7 +112,8 @@ Once installed update:
 
 The install the following tools:
 
-  {CODE()} brew install gnu-sed --default-names {CODE}       [[BR]]      {CODE()} brew install gawk --default-names {CODE}
+  {CODE()} brew install gnu-sed --default-names {CODE}
+{CODE()} brew install gawk --default-names {CODE}
 
   The --default-names switch is used to get rid of the 'g' prefix so that the installed commands can be invoked by just typing 'sed' and 'awk'.
 
@@ -128,5 +129,9 @@ The items captions like f.e. ,,"Process Monitor Definitions",, wraps, word wrapp
 Upon resizing and reducing the width, the minimal width should still allow the icon column to be fully seen. <br/>
 </span>
 {HTML}
+
+Testing break line
+This is line 01
+This is line 02
 
 No more text ahead!
